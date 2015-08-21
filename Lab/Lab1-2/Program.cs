@@ -11,11 +11,28 @@ namespace Lab1_2
         static void Main(string[] args)
         {
             // input
-            int[] input = { 4, 5, 2, 8, 9, 1, 2, 4, 3, 1 };
 
-            process(input);                        
+            int[] recv = input();
+            process(recv);
         }
-                
+
+        public static int[] input()
+        {
+            int count;
+
+            Console.Write("How many number ? : ");
+            count = Convert.ToInt32(Console.ReadLine());
+
+            int[] number = new int[count];
+
+            for (int i = 0; i < count; i++)
+            {
+                number[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            return number;
+        }
+
         public static void process(int[] input)
         {
             bool flag = true;
@@ -48,6 +65,6 @@ namespace Lab1_2
             }
 
             Console.WriteLine();
-        }             
+        }
     }
 }
